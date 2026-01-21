@@ -1,1 +1,181 @@
-Hola mundo
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmos | Exploración Galáctica</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        /* ESTILO BASE (Inspiración Nike/NASA) */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* ANIMACIÓN VELOCIDAD DE LA LUZ */
+        #intro-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeOut 0.5s forwards 2.5s; /* Dura 2.5s y desaparece */
+        }
+
+        .stars-warp {
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            box-shadow: 400px 200px #fff , 100px 300px #fff, 600px 400px #fff, 200px 600px #fff; /* Simulación estrellas */
+            animation: warpSpeed 0.8s ease-in infinite;
+        }
+
+        @keyframes warpSpeed {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(50); opacity: 0; }
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        /* DISEÑO DE LA PÁGINA (Estilo Nike/NASA) */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 10vw;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: -5px;
+            line-height: 0.9;
+        }
+
+        .intro-text {
+            max-width: 600px;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #ccc;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 100px 5%;
+            border-bottom: 1px solid #222;
+        }
+
+        h2 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            border-left: 5px solid #fff;
+            padding-left: 20px;
+        }
+
+        /* GRILLA DE IMÁGENES */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: 0.5s;
+        }
+
+        .image-grid img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #555;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animación inicial -->
+    <div id="intro-animation">
+        <div class="stars-warp"></div>
+    </div>
+
+    <!-- Encabezado / Introducción -->
+    <header>
+        <h1>EXPLORA EL<br>VACÍO</h1>
+        <p class="intro-text">
+            Bienvenido a la frontera final. Esta plataforma está diseñada para aquellos que buscan entender los misterios de la galaxia, desde nebulosas distantes hasta la arquitectura del tiempo y el espacio. Inspirado en la precisión de la NASA y el diseño audaz de Nike.
+        </p>
+    </header>
+
+    <!-- Sección 1: Nebulosas -->
+    <section id="nebulosas">
+        <h2>01. Nebulosas Etéreas</h2>
+        <p>Las cunas de las estrellas, nubes gigantes de gas y polvo cósmico.</p>
+        <div class="image-grid">
+            <img src="https://images.unsplash.com" alt="Nebulosa 1">
+            <img src="https://images.unsplash.com" alt="Nebulosa 2">
+            <img src="https://images.unsplash.com" alt="Nebulosa 3">
+        </div>
+    </section>
+
+    <!-- Sección 2: Agujeros Negros -->
+    <section id="agujeros">
+        <h2>02. Horizonte de Sucesos</h2>
+        <p>Donde las leyes de la física desafían la imaginación humana.</p>
+        <div class="image-grid">
+            <img src="https://images.unsplash.com" alt="Espacio 1">
+            <img src="https://images.unsplash.com" alt="Espacio 2">
+            <img src="https://images.unsplash.com" alt="Espacio 3">
+        </div>
+    </section>
+
+    <!-- Sección 3: Exploración -->
+    <section id="misiones">
+        <h2>03. Misiones Activas</h2>
+        <p>Nuestra tecnología alcanzando lo inalcanzable.</p>
+        <div class="image-grid">
+            <img src="https://images.unsplash.com" alt="Rover">
+            <img src="https://images.unsplash.com" alt="Cohete">
+            <img src="https://images.unsplash.com" alt="Satélite">
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 PROYECTO GALAXIA | SOLO HAZLO: EXPLORA.
+    </footer>
+
+</body>
+</html>
